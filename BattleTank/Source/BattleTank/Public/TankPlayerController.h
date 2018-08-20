@@ -30,10 +30,10 @@ private:
     //Return an OUT parameter, true if hit landscpae
     bool GetSightRayHitLocation(FVector& OutHitLocation) const; //have to pass reference to OUT parameters
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     float CrossHairXLocation = 0.5;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     float CrossHairYLocation = 0.33333;
     
     bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
