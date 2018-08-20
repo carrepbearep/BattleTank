@@ -2,6 +2,7 @@
 
 #include "TankAIController.h"
 #include "BattleTank.h"
+#include "Tank.h"
 
 void ATankAIController::BeginPlay()
 {
@@ -37,7 +38,7 @@ ATank* ATankAIController::GetControlledTank() const
 
 ATank* ATankAIController::GetPlayerTank() const
 {
-     auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
+    auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
     if (!PlayerPawn) { return nullptr; }
     return Cast<ATank>(PlayerPawn);
 }
