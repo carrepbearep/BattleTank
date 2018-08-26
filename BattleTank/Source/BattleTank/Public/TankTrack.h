@@ -17,7 +17,16 @@ class BATTLETANK_API UTankTrack : public UStaticMeshComponent
 private:
     UTankTrack();
     
-    virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+    virtual void BeginPlay() override;
+    
+    void ApplySidewaysForce();
+        
+    UFUNCTION()
+    void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+    
+    void DriveTrack();
+    
+    float CurrentThrottle = 0; 
     
 public:
     //Sets a throttle between -1 and +1
